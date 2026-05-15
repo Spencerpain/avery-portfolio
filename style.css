@@ -26,6 +26,8 @@
   --purple:    #9b2cd8;
   --purple-glow: rgba(155, 44, 216, 0.12);
   --green:     #0ec97b;
+  --rose:      #ec4899;
+  --rose-glow: rgba(236, 72, 153, 0.12);
 
   --serif: 'Playfair Display', Georgia, serif;
   --sans:  'Space Grotesk', system-ui, -apple-system, sans-serif;
@@ -383,14 +385,18 @@ section { padding: 110px 0; }
 
 .books {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+}
+
+@media (max-width: 1100px) {
+  .books { grid-template-columns: repeat(2, 1fr); }
 }
 
 .book {
   display: flex;
   flex-direction: row;
-  height: 480px;
+  height: 380px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   overflow: hidden;
@@ -406,6 +412,7 @@ section { padding: 110px 0; }
 .book-red   { --bk: var(--red);    --bk-glow: var(--red-glow); }
 .book-blue  { --bk: var(--blue);   --bk-glow: var(--blue-glow); }
 .book-purple{ --bk: var(--purple); --bk-glow: var(--purple-glow); }
+.book-rose  { --bk: var(--rose);   --bk-glow: var(--rose-glow); }
 
 .book:hover {
   border-color: var(--bk);
@@ -504,6 +511,7 @@ section { padding: 110px 0; }
 .portf-red::after   { background: var(--red); }
 .portf-blue::after  { background: var(--blue); }
 .portf-purple::after{ background: var(--purple); }
+.portf-rose::after  { background: var(--rose); }
 
 .back-link {
   display: inline-block;
@@ -528,6 +536,7 @@ section { padding: 110px 0; }
 .portf-red   .portf-title { color: var(--red); }
 .portf-blue  .portf-title { color: var(--blue); }
 .portf-purple .portf-title { color: var(--purple); }
+.portf-rose  .portf-title { color: var(--rose); }
 
 .portf-sub {
   font-size: 15px;
@@ -626,6 +635,45 @@ section { padding: 110px 0; }
   letter-spacing: 0.08em;
   color: var(--text-35);
 }
+
+/* Full-width uncropped artist showcase (Addison Rae, Tyler) */
+.portf-showcase {
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.portf-showcase img {
+  width: 100%;
+  display: block;
+}
+
+/* Photos with Friends grids */
+.friends-grid-top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.friends-grid-bottom {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.friends-grid-top img,
+.friends-grid-bottom img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  transition: transform 0.5s var(--ease);
+}
+
+.friends-grid-top img    { aspect-ratio: 3 / 2; }
+.friends-grid-bottom img { aspect-ratio: 2 / 3; }
+
+.friends-grid-top img:hover,
+.friends-grid-bottom img:hover { transform: scale(1.03); }
 
 /* Short Form showcase banner */
 .sf-showcase {
