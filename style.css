@@ -401,8 +401,24 @@ section { padding: 110px 0; }
   border: 1px solid var(--border);
   overflow: hidden;
   cursor: pointer;
+  position: relative;
   transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease), border-color 0.3s ease;
   text-decoration: none;
+}
+
+.book-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.28;
+  z-index: 0;
+  transition: opacity 0.45s ease;
+}
+
+.book:hover .book-photo {
+  opacity: 0.45;
 }
 
 .book:hover {
@@ -424,6 +440,8 @@ section { padding: 110px 0; }
   width: 7px;
   background: var(--bk);
   flex-shrink: 0;
+  position: relative;
+  z-index: 2;
   transition: width 0.3s var(--ease);
 }
 
@@ -436,7 +454,8 @@ section { padding: 110px 0; }
   justify-content: space-between;
   padding: 32px 28px;
   position: relative;
-  background: linear-gradient(160deg, #141414 0%, #0f0f0f 100%);
+  z-index: 1;
+  background: linear-gradient(160deg, rgba(14,14,14,0.55) 0%, rgba(8,8,8,0.88) 60%, rgba(6,6,6,0.96) 100%);
 }
 
 .book-icon {
