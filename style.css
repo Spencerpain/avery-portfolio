@@ -455,7 +455,14 @@ section { padding: 110px 0; }
   padding: 32px 28px;
   position: relative;
   z-index: 1;
-  background: linear-gradient(160deg, rgba(14,14,14,0.55) 0%, rgba(8,8,8,0.88) 60%, rgba(6,6,6,0.96) 100%);
+  /* Strong dark gradient so both photo and text are clearly visible */
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.45) 0%,
+    rgba(10, 10, 10, 0.60) 40%,
+    rgba(8,  8,  8,  0.92) 75%,
+    rgba(6,  6,  6,  0.98) 100%
+  );
 }
 
 .book-icon {
