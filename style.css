@@ -665,34 +665,24 @@ section { padding: 110px 0; }
   display: block;
 }
 
-/* Photos with Friends grids */
-.friends-grid-top {
+/* Photos with Friends — 5 columns, 2 rows */
+.friends-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.friends-grid-bottom {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 240px;
   gap: 10px;
 }
 
-.friends-grid-top img,
-.friends-grid-bottom img {
+.friends-grid img {
   width: 100%;
+  height: 100%;
   display: block;
   object-fit: cover;
   border: 1px solid var(--border);
   transition: transform 0.5s var(--ease);
 }
 
-.friends-grid-top img    { aspect-ratio: 3 / 2; }
-.friends-grid-bottom img { aspect-ratio: 2 / 3; }
-
-.friends-grid-top img:hover,
-.friends-grid-bottom img:hover { transform: scale(1.03); }
+.friends-grid img:hover { transform: scale(1.04); }
 
 /* Short Form showcase banner */
 .sf-showcase {
@@ -1020,6 +1010,13 @@ footer .container {
 
   .project-thumb {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .friends-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 160px;
   }
 }
 
